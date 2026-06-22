@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<company>
+
+<employee>
+
+<id>EMP101</id>
+<name>Rahul Kumar</name>
+<department>IT</department>
+<salary>45000</salary>
+
+</employee>
+
+<employee>
+
+<id>EMP102</id>
+<name>Priya Sharma</name>
+<department>HR</department>
+<salary>40000</salary>
+
+</employee>
+
+<employee>
+
+<id>EMP103</id>
+<name>Arun Kumar</name>
+<department>Finance</department>
+<salary>50000</salary>
+
+</employee>
+
+</company>
