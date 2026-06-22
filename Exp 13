@@ -1,0 +1,60 @@
+<?php
+
+$msg="";
+
+if(isset($_POST['reserve']))
+{
+$name=$_POST['name'];
+
+$room=$_POST['room'];
+
+file_put_contents(
+"resortbooking.txt",
+$name." | ".$room."\n",
+FILE_APPEND
+);
+
+$msg="Room Reserved Successfully";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resort Reservation</title>
+</head>
+
+<body>
+
+<h1>Resort Room Booking</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="name"
+placeholder="Guest Name">
+
+<br><br>
+
+<select name="room">
+
+<option>Beach View</option>
+<option>Garden View</option>
+<option>Luxury Suite</option>
+
+</select>
+
+<br><br>
+
+<input
+type="submit"
+name="reserve"
+value="Reserve">
+
+</form>
+
+<h3><?php echo $msg; ?></h3>
+
+</body>
+</html>
