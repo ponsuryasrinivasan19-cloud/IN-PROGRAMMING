@@ -1,0 +1,60 @@
+<?php
+
+$msg="";
+
+if(isset($_POST['appoint']))
+{
+$name=$_POST['name'];
+$service=$_POST['service'];
+
+file_put_contents(
+"salonappointments.txt",
+$name." | ".$service."\n",
+FILE_APPEND
+);
+
+$msg="Appointment Confirmed";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Salon Appointment System</title>
+</head>
+
+<body>
+
+<h1>Glow Salon</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="name"
+placeholder="Customer Name">
+
+<br><br>
+
+<select name="service">
+
+<option>Hair Styling</option>
+<option>Hair Coloring</option>
+<option>Facial Treatment</option>
+<option>Bridal Package</option>
+
+</select>
+
+<br><br>
+
+<input
+type="submit"
+name="appoint"
+value="Book Service">
+
+</form>
+
+<h3><?php echo $msg; ?></h3>
+
+</body>
+</html>
