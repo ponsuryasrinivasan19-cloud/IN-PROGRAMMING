@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Campus Navigation Map</title>
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:30px;
+}
+img{
+width:900px;
+border-radius:15px;
+box-shadow:0 0 20px cyan;
+}
+h1{
+color:#38bdf8;
+}
+</style>
+</head>
+<body>
+
+<h1>Interactive Campus Map</h1>
+
+<img src="campus.jpg" usemap="#campusmap">
+
+<map name="campusmap">
+
+<area shape="rect"
+coords="50,50,250,200"
+href="https://www.google.com"
+alt="Library">
+
+<area shape="circle"
+coords="450,180,80"
+href="https://www.wikipedia.org"
+alt="Laboratory">
+
+<area shape="rect"
+coords="650,100,850,250"
+href="https://github.com"
+alt="Auditorium">
+
+</map>
+
+</body>
+</html>
