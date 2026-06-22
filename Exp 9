@@ -1,0 +1,48 @@
+<?php
+
+$msg="";
+
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+$username=$_POST["username"];
+
+if(preg_match("/^[A-Za-z]{4,20}$/",$username))
+{
+$msg="Valid Username";
+}
+else
+{
+$msg="Invalid Username";
+}
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Username Validation</title>
+</head>
+
+<body>
+
+<h2>User Validation Form</h2>
+
+<form method="post">
+
+<input
+type="text"
+name="username"
+placeholder="Enter Username">
+
+<br><br>
+
+<input
+type="submit"
+value="Validate">
+
+</form>
+
+<h3><?php echo $msg; ?></h3>
+
+</body>
+</html>
