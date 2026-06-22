@@ -1,0 +1,83 @@
+<?php
+
+$msg="";
+
+if(isset($_POST['reserve']))
+{
+$name=$_POST['name'];
+
+$train=$_POST['train'];
+
+file_put_contents(
+"railway.txt",
+$name." | ".$train."\n",
+FILE_APPEND
+);
+
+$msg="Train Reservation Successful";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Railway Reservation Portal</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f1f5f9;
+padding:50px;
+}
+
+.container{
+width:500px;
+background:white;
+padding:20px;
+margin:auto;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Railway Reservation System</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="name"
+placeholder="Passenger Name">
+
+<br><br>
+
+<select name="train">
+
+<option>Shatabdi Express</option>
+<option>Rajdhani Express</option>
+<option>Duronto Express</option>
+
+</select>
+
+<br><br>
+
+<input
+type="submit"
+name="reserve"
+value="Reserve Seat">
+
+</form>
+
+<h3><?php echo $msg; ?></h3>
+
+</div>
+
+</body>
+</html>
