@@ -1,0 +1,60 @@
+<?php
+
+$msg="";
+
+if(isset($_POST['book']))
+{
+$name=$_POST['name'];
+
+$route=$_POST['route'];
+
+file_put_contents(
+"travelbooking.txt",
+$name." | ".$route."\n",
+FILE_APPEND
+);
+
+$msg="Travel Ticket Booked";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Intercity Travel Booking</title>
+</head>
+
+<body>
+
+<h1>Intercity Travel Portal</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="name"
+placeholder="Passenger Name">
+
+<br><br>
+
+<select name="route">
+
+<option>Chennai - Bangalore</option>
+<option>Chennai - Coimbatore</option>
+<option>Chennai - Madurai</option>
+
+</select>
+
+<br><br>
+
+<input
+type="submit"
+name="book"
+value="Book Ticket">
+
+</form>
+
+<h3><?php echo $msg; ?></h3>
+
+</body>
+</html>
