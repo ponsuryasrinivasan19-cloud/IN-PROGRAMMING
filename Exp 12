@@ -1,0 +1,54 @@
+<?php
+
+$msg="";
+
+if(isset($_POST['add']))
+{
+$book=$_POST['book'];
+
+$author=$_POST['author'];
+
+file_put_contents(
+"library.txt",
+$book." | ".$author."\n",
+FILE_APPEND
+);
+
+$msg="Book Added";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Digital Library</title>
+</head>
+
+<body>
+
+<h1>Digital Library Portal</h1>
+
+<form method="post">
+
+<input type="text"
+name="book"
+placeholder="Book Name">
+
+<br><br>
+
+<input type="text"
+name="author"
+placeholder="Author Name">
+
+<br><br>
+
+<input type="submit"
+name="add"
+value="Add Book">
+
+</form>
+
+<h3><?php echo $msg; ?></h3>
+
+</body>
+</html>
