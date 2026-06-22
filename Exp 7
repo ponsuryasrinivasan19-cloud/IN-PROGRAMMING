@@ -1,0 +1,40 @@
+<%@ page language="java" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic JSP Page</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding-top:150px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Student Information Portal</h1>
+
+<%
+String student="Rahul";
+String dept="CSE";
+%>
+
+<h2>Name : <%= student %></h2>
+
+<h2>Department : <%= dept %></h2>
+
+<h3>Date :
+<%= new java.util.Date() %>
+</h3>
+
+</body>
+</html>
