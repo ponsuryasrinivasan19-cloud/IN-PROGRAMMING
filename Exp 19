@@ -1,0 +1,69 @@
+<?php
+
+$msg="";
+
+if(isset($_POST['consult']))
+{
+$patient=$_POST['patient'];
+$doctor=$_POST['doctor'];
+
+file_put_contents(
+"consultation.txt",
+$patient." | ".$doctor."\n",
+FILE_APPEND
+);
+
+$msg="Consultation Scheduled";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Doctor Consultation System</title>
+
+<style>
+body{
+font-family:Verdana;
+background:#ecfeff;
+padding:50px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Doctor Consultation Booking</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="patient"
+placeholder="Patient Name">
+
+<br><br>
+
+<select name="doctor">
+
+<option>Dr. Arun</option>
+<option>Dr. Priya</option>
+<option>Dr. Kumar</option>
+<option>Dr. Meena</option>
+
+</select>
+
+<br><br>
+
+<input
+type="submit"
+name="consult"
+value="Book Consultation">
+
+</form>
+
+<h3><?php echo $msg; ?></h3>
+
+</body>
+</html>
