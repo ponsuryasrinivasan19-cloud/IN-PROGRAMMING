@@ -1,0 +1,60 @@
+<?php
+
+$msg="";
+
+if(isset($_POST['order']))
+{
+$name=$_POST['name'];
+$item=$_POST['item'];
+
+file_put_contents(
+"bakeryorders.txt",
+$name." | ".$item."\n",
+FILE_APPEND
+);
+
+$msg="Order Placed Successfully";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bakery Order System</title>
+</head>
+
+<body>
+
+<h1>Sweet Treats Bakery</h1>
+
+<form method="post">
+
+<input
+type="text"
+name="name"
+placeholder="Customer Name">
+
+<br><br>
+
+<select name="item">
+
+<option>Chocolate Truffle Cake</option>
+<option>Red Velvet Cake</option>
+<option>Black Forest Cake</option>
+<option>Vanilla Cupcakes</option>
+
+</select>
+
+<br><br>
+
+<input
+type="submit"
+name="order"
+value="Place Order">
+
+</form>
+
+<h3><?php echo $msg; ?></h3>
+
+</body>
+</html>
