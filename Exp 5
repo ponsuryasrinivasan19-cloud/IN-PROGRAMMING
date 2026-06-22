@@ -1,0 +1,99 @@
+<%@ page language="java" %>
+
+<%
+String username=request.getParameter("username");
+
+String hidden=request.getParameter("hiddenUser");
+%>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Hidden Field Demo</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f1f5f9;
+text-align:center;
+padding-top:100px;
+}
+
+form{
+background:white;
+padding:20px;
+display:inline-block;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<%
+if(username==null && hidden==null)
+{
+%>
+
+<form method="post">
+
+<input
+type="text"
+name="username"
+placeholder="Enter Username">
+
+<br><br>
+
+<input
+type="submit"
+value="Next">
+
+</form>
+
+<%
+}
+else if(hidden==null)
+{
+%>
+
+<form method="post">
+
+<input
+type="hidden"
+name="hiddenUser"
+value="<%= username %>">
+
+<h2>Welcome <%= username %></h2>
+
+<input
+type="submit"
+value="Continue">
+
+</form>
+
+<%
+}
+else
+{
+%>
+
+<h1>
+Session Maintained Successfully
+</h1>
+
+<h2>
+User :
+<%= hidden %>
+</h2>
+
+<%
+}
+%>
+
+</body>
+</html>
