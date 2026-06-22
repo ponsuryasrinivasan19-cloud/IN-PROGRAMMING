@@ -1,0 +1,84 @@
+<?php
+
+$message="";
+
+if(isset($_POST['save']))
+{
+$name=$_POST['name'];
+$city=$_POST['city'];
+
+$data=$name." | ".$city."\n";
+
+file_put_contents(
+"userrecords.txt",
+$data,
+FILE_APPEND
+);
+
+$message="Data Saved Successfully";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Store User Data</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f8fafc;
+padding:50px;
+}
+
+.container{
+background:white;
+padding:20px;
+width:400px;
+margin:auto;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>User Information Form</h2>
+
+<form method="post">
+
+<input
+type="text"
+name="name"
+placeholder="Enter Name">
+
+<br><br>
+
+<input
+type="text"
+name="city"
+placeholder="Enter City">
+
+<br><br>
+
+<input
+type="submit"
+name="save"
+value="Save">
+
+</form>
+
+<h3>
+<?php echo $message; ?>
+</h3>
+
+</div>
+
+</body>
+</html>
