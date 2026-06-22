@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Quiz</title>
+<style>
+body{
+font-family:Arial;
+background:#e0f2fe;
+padding:30px;
+}
+.container{
+background:white;
+padding:20px;
+border-radius:10px;
+width:700px;
+margin:auto;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h2>Online Quiz System</h2>
+
+<form action="QuizServlet" method="post">
+
+<p>1. HTML stands for?</p>
+<input type="radio" name="q1" value="a">Hyper Text Markup Language<br>
+<input type="radio" name="q1" value="b">Home Tool Markup Language<br>
+
+<p>2. PHP is a?</p>
+<input type="radio" name="q2" value="a">Programming Language<br>
+<input type="radio" name="q2" value="b">Database<br>
+
+<br>
+
+<input type="submit" value="Submit Quiz">
+
+</form>
+
+</div>
+
+</body>
+</html>
